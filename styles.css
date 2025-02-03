@@ -1,12 +1,24 @@
+/* -------------------------------------------------------------------------- */
+/*                        VARIABLES & REUSABLE CLASSES                        */
+/* -------------------------------------------------------------------------- */
+
+/* -------------------------------- VARIABLES ------------------------------- */
 :root {
+    /* colors */
     --color-green: #C4F82A;
     --color-grey-900: #141414;
     --color-grey-800: #1F1F1F;
     --color-grey-700: #333333;
     --color-white: #ffffff;
 
-    --font-family-primary: "Inter", sans-serif;
+    /* typography */
+    --font-family-primary: "Inter", serif;
 
+    --font-size-text-preset-1: 24px;
+    --font-size-text-preset-2: 14px;
+    --font-size-text-preset-3: 14px;
+
+    /* spacing */
     --spacing-500: 40px;
     --spacing-300: 24px;
     --spacing-200: 16px;
@@ -14,15 +26,7 @@
     --spacing-100: 8px;
     --spacing-50: 4px;
 
-    --font-size-text-preset-1: 24px;
-    --font-size-text-preset-2: 14px;
-    --font-size-text-preset-3: 14px;
-}
-
-
-
-:root {
-
+    /* responsive variables */
     --card-padding: var(--spacing-300);
     --card-max-width: 327px;
     --card-min-width: 100%;
@@ -33,6 +37,8 @@
         --card-min-width: 384px;
     }
 }
+
+/* ---------------------------- RESUSABLE CLASSES --------------------------- */
 
 .text-preset-1 {
     line-height: 1.5;
@@ -60,7 +66,6 @@
     font-family: var(--font-family-primary);
 }
 
-
 .regular {
     font-weight: 400;
 }
@@ -71,6 +76,29 @@
 
 .bold {
     font-weight: 700;
+}
+
+.m-t-50 {
+    margin-top: var(--spacing-50);
+}
+
+.m-t-100 {
+    margin-top: var(--spacing-100);
+}
+
+.m-t-200 {
+    margin-top: var(--spacing-200);
+}
+
+.m-t-300 {
+    margin-top: var(--spacing-300);
+}
+
+/* -------------------------------------------------------------------------- */
+
+* {
+    font-optical-sizing: auto;
+    font-style: normal;
 }
 
 body {
@@ -92,7 +120,6 @@ body {
     align-items: center;
     justify-content: center;
     border-radius: 12px;
-
 }
 
 .user-container {
@@ -118,35 +145,27 @@ body {
     object-position: center;
 }
 
-.user-name {
-    margin-top: var(--spacing-300);
-}
-
 .location {
-    margin-top: var(--spacing-50);
     color: var(--color-green)
 }
 
-.tagline {
-    margin-top: var(--spacing-300);
-}
-
 .social-links-container {
-    margin-top: var(--spacing-300);
     width: 100%;
 }
 
 .social-link-item {
-    margin-top: var(--spacing-200);
     width: 100%;
+    list-style: none;
+}
+
+.social-link-item a {
+    text-decoration: none;
+    display: block;
     background-color: var(--color-grey-700);
     text-align: center;
     border-radius: 8px;
     padding: var(--spacing-150);
-}
-
-.social-link-item a {
-    color: inherit;
+    transition: background-color 600ms ease-in, color 600ms ease-in;
 }
 
 .social-link-item a:hover,
@@ -155,41 +174,9 @@ body {
     background-color: var(--color-green);
     color: var(--color-grey-700);
     cursor: pointer;
-    animation: change-background 600ms linear;
+    outline: none;
 }
-
-.social-link-item:hover,
-.social-link-item:active,
-.social-link-item:focus {
-    background-color: var(--color-green);
-    color: var(--color-grey-700);
-    cursor: pointer;
-    animation: change-background 600ms linear;
-}
-
-
-
-a {
-    text-decoration: none;
-}
-
 
 footer {
     display: none;
-}
-
-
-@keyframes change-background {
-    from {
-        background-color: var(--color-grey-700);
-    }
-
-    to {
-        background-color: var(--color-green);
-    }
-}
-
-/* Apply the animation */
-div {
-    animation: change-background 300ms linear;
 }
