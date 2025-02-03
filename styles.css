@@ -110,6 +110,10 @@ body {
     align-items: center;
 }
 
+main {
+    width: 100%;
+}
+
 .social-links-card-container {
     display: flex;
     flex-direction: column;
