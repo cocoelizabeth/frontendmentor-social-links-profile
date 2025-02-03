@@ -1,93 +1,145 @@
-# Frontend Mentor - Social links profile
+# Frontend Mentor - Social links profile solution
 
-![Design preview for the Social links profile coding challenge](./preview.jpg)
+This is a solution to the [Social links profile challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/social-links-profile-UG32l9m6dQ). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
 
-**To do this challenge, you need a basic understanding of HTML and CSS.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this social links profile and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to: 
+Users should be able to:
 
 - See hover and focus states for all interactive elements on the page
 
-Want some support on the challenge? [Join our community](https://www.frontendmentor.io/community) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./project-screenshot.jpg)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
 
-All the required assets for this project are in the `/assets` folder. The images are already exported for the correct screen size and optimized.
+**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
 
-We also include variable and static font files for the required fonts for this project. You can choose to either link to Google Fonts or use the local font files to host the fonts yourself. Note that we've removed the static font files for the font weights that aren't needed for this project.
+### Links
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Solution/Live Site URL: [https://cocoelizabeth.github.io/frontendmentor-social-links-profile/](https://cocoelizabeth.github.io/frontendmentor-social-links-profile/)
 
-## Building your project
+## My process
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+### Built with
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+- Semantic HTML5 markup
+- CSS custom properties
+- Flexbox
+- Mobile-first workflow
 
-## Deploying your project
+### What I learned
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+**Applying the CSS for the hover, focus and active states of the social links**\
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+Initially, I was having issues getting the color of the text in the `<a>` tags to change when I hovered over the `<li>` elements. I could get the background to change but the text  (which was wrapped in an `<a>` tag inside the `<li>`) was only changing color if I directly hovered over the text, not if I hovered over the `<li>` outside of the text. To fix this, I adjusted the CSS so that the `<a>` tag inside the `<li>` filled the entire space of the `<li>`. This way, hovering anywhere over the `<li>` will trigger the hover effect defined for the `<a>` tag.\
+ 
+Here are the specific adjustments that I made to the css: 
+1. Set the `<a>` tag to `display:block` in order to make the `<a>` tag fill the entire space of its parent `<li>` element.
+2. Moved the padding from the `<li>` to the `<a>` tag. Since the `<a>` tag is now a block element, it can handle padding, margins, and other box-model properties.
+3. Applied the `:hover`, `:active`, and `:focus` pseudo-classes directly to the `<a>` tags. This change guaranteed that both the background and text color changes would be visible when any part of the `<li>` was hovered over, not just the text.
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+Here is the relevant html and CSS code:
 
-## Create a custom `README.md`
+```html
+<li class="social-link-item m-t-200">
+  <a
+    class="social-link-item-text text-preset-2 bold"
+    href="https://github.com/cocoelizabeth"
+    target="_blank"
+    aria-label="Visit my GitHub profile"
+  >GitHub</a
+  >
+</li>
+```
+```css
+.social-link-item {
+  width: 100%;
+  list-style: none;
+}
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+.social-link-item a {
+  text-decoration: none;
+  display: block;
+  background-color: var(--color-grey-700);
+  text-align: center;
+  border-radius: 8px;
+  padding: var(--spacing-150);
+  transition: background-color 600ms ease-in, color 600ms ease-in;
+}
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+.social-link-item a:hover,
+.social-link-item a:active,
+.social-link-item a:focus {
+  background-color: var(--color-green);
+  color: var(--color-grey-700);
+  cursor: pointer;
+  outline: none;
+}
+```
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+### Continued development
 
-## Submitting your solution
+One thing I would like to fix in the future is an issue that I had with the Instagram link.
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+For some reason, when I used the link `href="https://www.instagram.com/coco.elizabeth_/"`, the browser added inline styling (color and text-decoration) to the `<a>` tag for the instagram social link item. I couldn't find anything online about why this was happening but it happened to me in both Chrome and Safari, and it happen on my local server as well as when I published the project on GitHub Pages.
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+**Here is a screenshot of what was happening:**\
+*(Notice the purple, underlined instagram link)*
+![](./instagram-link-bug.png)
 
-## Sharing your solution
+**This is the HTML I was getting when I inspected the code:**\
+*(Notice the added  `style`  attribute, which was not added to any of the other links)*
+```html
+<li class="social-link-item m-t-200">
+   <a 
+     class="social-link-item-text text-preset-2 bold" 
+     href="https://www.instagram.com/coco.elizabeth_/" 
+     target="_blank" 
+     aria-label="Follow me on Instagram" 
+     style="color: rgb(206, 167, 212); text-decoration: underline;">Instagram</a>
+</li>
+```
+**Things I tried to fix it:**
+1. Setting a `:visited` CSS pseudo-class in the CSS - *This did not work.*
+2. Tested it in different browsers (Chrome and Safari). - *It was happening in both browsers*
+3. Changing the order of the `<li>` elements so that the instagram link was not last to see if this was something only happening to the "last child". - *This did not fix the issue. It was still happening for the instagram link and not for any of the others.*
+3. Pushing the site live to GitHub pages to see if maybe it was just an issue with my local server - *This didn't fix the issue*
 
-There are multiple places you can share your solution:
+**Ultimate solution/workaround:**\
+To fix the issue, I used a URL shortener and replaced the link with the shortened URL: `href="https://tinyurl.com/coco-elizabeth-intsa"`.
+ 
+While this workaround fixed the issue, I am still confused about why it was happening. If anyone has any ideas of what would have caused this, please let me know!
 
-1. Share your solution page in the **#finished-projects** channel of our [community](https://www.frontendmentor.io/community). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+### Useful resources
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- [Flexbox Froggy](https://flexboxfroggy.com/) - This is a fun, interactive way to learn CSS Flexbox. I used this tool to better understand how to use Flexbox for layout adjustments, which was crucial for this project. It's a great resource for anyone looking to sharpen their Flexbox skills in a playful and engaging manner.
+- [Google Fonts](https://fonts.google.com/) - This is a great resource for finding and integrating different fonts.
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
 
-## Got feedback for us?
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+## Author
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
-
-**Have fun building!** 🚀
+<!-- - Website - [Add your name here](https://www.your-site.com) -->
+- Frontend Mentor - [@cocoelizabeth](https://www.frontendmentor.io/profile/cocoelizabeth)
+<!-- - Twitter - [@yourusername](https://www.twitter.com/yourusername) -->
